@@ -1,19 +1,40 @@
 package com.cgnexus;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Test Math Operations in Calculator class")
 class CalculatorTest {
+
+    private Calculator calculator;
+
+    @BeforeAll
+    static void init() {
+
+        System.out.println("Running CalculatorTest... @BeforeAll");
+    }
+
+    @AfterAll
+    static void tearDown() {
+        System.out.println("CalculatorTest is done! @AfterAll");
+    }
+
+    @BeforeEach
+    void setUp() {
+        calculator = new Calculator();
+        System.out.println("Running a test... @BeforeEach");
+    }
+
+    @AfterEach
+    void tearDownEach() {
+        System.out.println("Test is done! @AfterEach");
+    }
 
     @DisplayName("integerDivision() happy path")
     @Test
     void testIntegerDivision_WhenValidValuesAreProvided_shouldReturnExpectedResult() {
         //Arrange
-        Calculator calculator = new Calculator();
 
         //Act
         int result = calculator.integerDivision(4, 2);
@@ -27,7 +48,6 @@ class CalculatorTest {
     @Test
     void testIntegerDivision_WhenInvalidValuesAreProvided_shouldThrowArithmeticException() {
         //Arrange
-        Calculator calculator = new Calculator();
 
         //Act and Assert
         assertThrows(ArithmeticException.class, () -> calculator.integerDivision(4, 0));
@@ -37,7 +57,6 @@ class CalculatorTest {
     @Test
     void testIntegerDivision_WhenNegativeValuesAreProvided_shouldReturnExpectedResult() {
         //Arrange
-        Calculator calculator = new Calculator();
 
         //Act
         int result = calculator.integerDivision(-4, 2);
@@ -51,7 +70,6 @@ class CalculatorTest {
     void testIntegerSubtraction__WhenValidValuesAreProvided_shouldReturnExpectedResult() {
 
 //        Arrange = given
-        Calculator calculator = new Calculator();
 
 //        Act = when
         int result = calculator.integerSubtraction(4, 2);
@@ -60,11 +78,14 @@ class CalculatorTest {
         assertEquals(2, result, "4 subtracted by 2 should be 2");
     }
 
+    @Disabled("Disabled until bug #99 has been fixed")
     @DisplayName("integerSubtraction() negative values")
     @Test
     void testIntegerSubtraction_WhenNegativeValuesAreProvided_shouldReturnExpectedResult() {
+
+        fail("This test is disabled until bug #99 has been fixed");
+
         //Arrange
-        Calculator calculator = new Calculator();
         int num1 = -4;
         int num2 = 2;
         int expectedResult = -6;
