@@ -1,8 +1,13 @@
 package com.cgnexus;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("Test Math Operations in Calculator class")
 class CalculatorTest {
@@ -18,6 +23,18 @@ class CalculatorTest {
     @AfterAll
     static void tearDown() {
         System.out.println("CalculatorTest is done! @AfterAll");
+    }
+
+    private static Stream<Arguments> argumentsStream() {
+        return Stream.of(
+                Arguments.of(4, 2, 2),
+                Arguments.of(4, 4, 0),
+                Arguments.of(4, 5, -1),
+                Arguments.of(4, 6, -2),
+                Arguments.of(4, 7, -3),
+                Arguments.of(4, 8, -4),
+                Arguments.of(4, 9, -5)
+        );
     }
 
     @BeforeEach
@@ -79,17 +96,12 @@ class CalculatorTest {
         assertEquals(2, result, "4 subtracted by 2 should be 2");
     }
 
-    @Disabled("Disabled until bug #99 has been fixed")
-    @DisplayName("integerSubtraction() negative values")
-    @Test
-    void testIntegerSubtraction_WhenNegativeValuesAreProvided_shouldReturnExpectedResult() {
-
-        fail("This test is disabled until bug #99 has been fixed");
+    @ParameterizedTest
+    @DisplayName("integerSubtraction() multiple scenarios")
+    @MethodSource("argumentsStream")
+    void testIntegerSubtraction_WhenNegativeValuesAreProvided_shouldReturnExpectedResult(int num1, int num2, int expectedResult) {
 
         //Arrange
-        int num1 = -4;
-        int num2 = 2;
-        int expectedResult = -6;
         String message = "The result of subtracting " + num2 + " from " + num1 + " should be " + expectedResult;
 
         //Act
@@ -98,6 +110,53 @@ class CalculatorTest {
         //Assert
         //by using lambda expression, we can condition the execution of the message until the assertion fails
         assertEquals(expectedResult, result, () -> message);
+    }
+
+    @ParameterizedTest
+    @DisplayName("integerSubtraction() multiple scenarios with @CsvSource")
+    @CsvSource({
+            "4, 2, 2",
+            "4, 4, 0",
+            "4, 5, -1",
+            "4, 6, -2",
+            "4, 7, -3",
+            "4, 8, -4",
+            "4, 9, -5"
+    })
+    void testIntegerSubtractionWithCsvSource_WhenNegativeValuesAreProvided_shouldReturnExpectedResult(int num1, int num2, int expectedResult) {
+
+        //Arrange
+        String message = "The result of subtracting " + num2 + " from " + num1 + " should be " + expectedResult;
+
+        //Act
+        int result = calculator.integerSubtraction(num1, num2);
+
+        //Assert
+        //by using lambda expression, we can condition the execution of the message until the assertion fails
+        assertEquals(expectedResult, result, () -> message);
+    }
+
+    @ParameterizedTest
+    @DisplayName("integerSubtraction() multiple scenarios with @CsvSourceFile")
+    @CsvFileSource(resources = "/data.csv")
+    void testIntegerSubtractionWithCsvFileSource_WhenNegativeValuesAreProvided_shouldReturnExpectedResult(int num1, int num2, int expectedResult) {
+
+        //Arrange
+        String message = "The result of subtracting " + num2 + " from " + num1 + " should be " + expectedResult;
+
+        //Act
+        int result = calculator.integerSubtraction(num1, num2);
+
+        //Assert
+        //by using lambda expression, we can condition the execution of the message until the assertion fails
+        assertEquals(expectedResult, result, () -> message);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"apple", "banana", "orange"})
+    @DisplayName("ValueSource test")
+    void testValueSource(String fruit) {
+        System.out.println("fruit = " + fruit);
     }
 
 }

@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cb68587-438c-42a7-8ebe-121c5f55aff5" name="Changes" comment="disable tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/DemoRepeatedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/cgnexus/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/CalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,6 +62,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/chama/OneDrive/Documents/MYCODING_PROJECTS_2025/SELF_STUDY_PEOJECTS/Test_Java_applications_with_JUnit_5_Mockito_Testcontainers/01_Introduction/Examples/src/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,6 +77,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chama\OneDrive\Documents\MYCODING_PROJECTS_2025\SELF_STUDY_PEOJECTS\Test_Java_applications_with_JUnit_5_Mockito_Testcontainers\01_Introduction\Examples\src\test" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -172,7 +178,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735891257778</updated>
-      <workItem from="1735891258986" duration="9384000" />
+      <workItem from="1735891258986" duration="13744000" />
     </task>
     <task id="LOCAL-00001" summary="disable tests">
       <option name="closed" value="true" />
