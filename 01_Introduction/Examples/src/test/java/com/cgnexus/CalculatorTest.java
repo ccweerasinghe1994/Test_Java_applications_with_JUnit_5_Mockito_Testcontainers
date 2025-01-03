@@ -48,9 +48,10 @@ class CalculatorTest {
     @Test
     void testIntegerDivision_WhenInvalidValuesAreProvided_shouldThrowArithmeticException() {
         //Arrange
-
+        String message = "Division by zero should throw ArithmeticException";
         //Act and Assert
-        assertThrows(ArithmeticException.class, () -> calculator.integerDivision(4, 0));
+        ArithmeticException arithmeticException = assertThrows(ArithmeticException.class, () -> calculator.integerDivision(4, 0), message);
+        assertEquals("/ by zero", arithmeticException.getMessage(), "The message should be '/ by zero'");
     }
 
     @DisplayName("integerDivision() negative values")
