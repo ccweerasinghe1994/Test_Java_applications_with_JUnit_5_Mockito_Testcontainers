@@ -12,7 +12,7 @@ public class DemoRepeatedTest {
     private final Calculator calculator = new Calculator();
 
     @DisplayName("integerDivision() division by zero should throw ArithmeticException")
-    @RepeatedTest(5)
+    @RepeatedTest(value = 5, name = "Running test {currentRepetition} of {totalRepetitions}")
     void testIntegerDivision_WhenInvalidValuesAreProvided_shouldThrowArithmeticException(RepetitionInfo repetitionInfo) {
         System.out.println("Running test " + repetitionInfo.getCurrentRepetition() + "...");
         System.out.println("Total repetitions: " + repetitionInfo.getTotalRepetitions());

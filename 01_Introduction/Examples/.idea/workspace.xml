@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cb68587-438c-42a7-8ebe-121c5f55aff5" name="Changes" comment="disable tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/DemoRepeatedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cgnexus/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/CalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/MethodOrderByMethodNameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/MethodOrderByOrderIndexTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/MethodOrderRandomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cgnexus/DemoRepeatedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cgnexus/DemoRepeatedTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,7 @@
     "JUnit.CalculatorTest.integerDivision.executor": "Run",
     "JUnit.CalculatorTest.testIntegerDivision_whenInvalidValuesAreProvided_shouldThrowArithmeticException.executor": "Run",
     "JUnit.CalculatorTest.testIntegerDivision_whenNegativeValuesAreProvided_shouldReturnExpectedResult.executor": "Run",
+    "JUnit.TestingOrder.executor": "Run",
     "JUnit.java in Examples.executor": "Run",
     "Maven.Examples [org.apache.maven.plugins:maven-surefire-plugin:3.5.2:test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -86,28 +88,15 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.cgnexus" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cgnexus" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in Examples">
+  <component name="RunManager">
     <configuration name="All in Examples" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Examples" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTest.integerDivision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Examples" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cgnexus.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cgnexus" />
-      <option name="MAIN_CLASS_NAME" value="com.cgnexus.CalculatorTest" />
-      <option name="METHOD_NAME" value="integerDivision" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,6 +133,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MethodOrderRandomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Examples" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cgnexus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cgnexus" />
+      <option name="MAIN_CLASS_NAME" value="com.cgnexus.MethodOrderRandomTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in Examples" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Examples" />
       <option name="TEST_OBJECT" value="directory" />
@@ -155,10 +159,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in Examples" />
+        <item itemvalue="JUnit.MethodOrderRandomTest" />
         <item itemvalue="JUnit.CalculatorTest.testIntegerDivision_whenNegativeValuesAreProvided_shouldReturnExpectedResult" />
         <item itemvalue="JUnit.CalculatorTest.testIntegerDivision_whenInvalidValuesAreProvided_shouldThrowArithmeticException" />
         <item itemvalue="JUnit.All in Examples" />
-        <item itemvalue="JUnit.CalculatorTest.integerDivision" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +182,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735891257778</updated>
-      <workItem from="1735891258986" duration="13744000" />
+      <workItem from="1735891258986" duration="17122000" />
     </task>
     <task id="LOCAL-00001" summary="disable tests">
       <option name="closed" value="true" />
